@@ -1,0 +1,56 @@
+<h1>Students</h1>
+<table>
+    <thead>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+    <thead>
+    <tbody>
+        {% for student in students %}
+        <tr>
+            <td>{{student.id}}</td>
+            <td>{{student.first_name}}</td>
+            <td>{{student.last_name}}</td>
+            <td>
+                <form action="/student/{{student.id}}" method="GET">
+                    <input type="submit" value="View Scores">
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </body>
+</table>
+
+<h1>Quizzes</h1>
+<table>
+    <thead>
+        <th>ID</th>
+        <th>Subject</th>
+        <th># Questions</th>
+        <th>Date</th>
+    <thead>
+    <tbody>
+        {% for quiz in quizzes %}
+        <tr>
+            <td>{{quiz.id}}</td>
+            <td>{{quiz.subject}}</td>
+            <td>{{quiz.num_questions}}</td>
+            <td>{{quiz.date}}</td>
+        </tr>
+        {% endfor %}
+    </body>
+</table>
+
+
+
+<form action="/student/add" method="GET">
+    <input type="submit" value="Add Student">
+</form>
+
+<form action="/quiz/add" method="GET">
+    <input type="submit" value="Add Quiz">
+</form>
+
+<form action="/results/add" method="GET">
+    <input type="submit" value="Add Result">
+</form>

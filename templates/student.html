@@ -1,0 +1,12 @@
+<h1>Add Student</h1>
+<form action="/student/add" method="POST">
+    <text>First Name</text>
+    <input type="text" name="first_name">
+    <text>Last Name</text>
+    <input type="text" name="last_name">
+    <input type="submit">
+</form>
+
+{% if error %}
+<text>An error occurred. Please try again.</text>
+{% endif %}

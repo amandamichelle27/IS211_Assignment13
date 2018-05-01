@@ -1,0 +1,26 @@
+<h1>Add Score</h1>
+<form action="/results/add" method="POST">
+    <text>Student:</text>
+    <select name="student_id">
+        {% for student in students %}
+        <option value={{student.id}}>{{student.first_name}} {{student.last_name}}</option>
+        {% endfor %}
+    </select>
+    <text>Quiz Subject:</text>
+    <select name="quiz_id">
+        {% for quiz in quizzes %}
+        <option value={{quiz.id}}>{{quiz.subject}}</option>
+        {% endfor %}
+    </select>
+    <text>Quiz Score:</text>
+    <input type="number" name="score">
+    <input type="submit">
+</form>
+
+{% if error %}
+<text>That input was not valid. Please try again.</text>
+{% endif %}
+
+{% if failed %}
+<text>That quiz was already scored for that user.</text>
+{% endif %}

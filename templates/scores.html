@@ -1,0 +1,23 @@
+{% if scores %}
+<h1>Quizzes</h1>
+<table>
+    <thead>
+        <th>Quiz ID</th>
+        <th>Score</th>
+    <thead>
+    <tbody>
+        {% for score in scores %}
+        <tr>
+            <td>{{score.quiz_id}}</td>
+            <td>{{score.score}}</td>
+        </tr>
+        {% endfor %}
+    </body>
+</table>
+{% else %}
+<text>No Results.</text>
+{% endif %}
+
+<form action="/dashboard" method="GET">
+    <input type="submit" value="Return">
+</form>

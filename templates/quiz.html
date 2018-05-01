@@ -1,0 +1,14 @@
+<h1>Add Quiz</h1>
+<form action="/quiz/add" method="POST">
+    <text>Subject:</text>
+    <input type="text" name="subject">
+    <text># Questions:</text>
+    <input type="number" name="num_questions">
+    <text>Date:</text>
+    <input type="date" name="date">
+    <input type="submit">
+</form>
+
+{% if error %}
+<text>An error occurred. Please try again.</text>
+{% endif %}
